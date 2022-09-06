@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ExpenseForm.css";
+import styles from "./ExpenseForm.module.css";
 
 const ExpenseForm = ({ onSaveExpenseData }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -47,8 +47,8 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
       )}
       {formActive === true && (
         <form onSubmit={submitHandler}>
-          <div className="new-expense__controls">
-            <div className="new-expense__control">
+          <div className={styles["new-expense__controls"]}>
+            <div className={styles["new-expense__control"]}>
               <label htmlFor="title">Title</label>
               <input
                 id="title"
@@ -58,7 +58,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
                 required
               />
             </div>
-            <div className="new-expense__control">
+            <div className={styles["new-expense__control"]}>
               <label htmlFor="amount">Amount</label>
               <input
                 id="amount"
@@ -70,7 +70,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
                 required
               />
             </div>
-            <div className="new-expense__control">
+            <div className={styles["new-expense__control"]}>
               <label htmlFor="date">Date</label>
               <input
                 id="date"
@@ -83,7 +83,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
               />
             </div>
           </div>
-          <div className="new-expense__actions">
+          <div className={styles["new-expense__actions"]}>
             <button onClick={activeStateHandler}>Cancel</button>
             <button type="submit">Add Expense</button>
           </div>
